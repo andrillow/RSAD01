@@ -18,20 +18,15 @@ cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (3)
 plot(b2, col=cl)
 
 # try with more colors
-par(mfrow=c(1,3))
-
-dev.off() # turn off things that are open before opening new stuff
-cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (1000)
-plot(b2, col=cl)
 cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (100)
 plot(b2, col=cl)
-cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (3)
-plot(b2, col=cl)
+dev.off()
 
 # set the working directory
-setwd(C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/)
+setwd("C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/")
 pdf("b2.pdf")
-png(b2.png")
+png("b2.png")
+dev.off()
 
 
 
