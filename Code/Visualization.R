@@ -18,15 +18,14 @@ cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (3)
 plot(b2, col=cl)
 
 # try with more colors
+dev.off()
 cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (100)
 plot(b2, col=cl)
-dev.off()
 
 # set the working directory
 setwd("C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/")
 pdf("b2.pdf")
 png("b2.png")
-dev.off()
 
 
 
