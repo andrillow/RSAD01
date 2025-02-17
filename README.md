@@ -18,3 +18,14 @@ The following langugaes will be used:
   + graphical editing
  
 > the course material will be available for one month
+
+## Example of code
+Wiht the following code, we can attain the following image:
+
+``` r
+pdf("nameofthemimage.pdf")
+plot(b2)
+dev.off()
+```
+
+<img src="Pictures/b2.png" width="60%" />
