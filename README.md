@@ -3,7 +3,7 @@ Remote sensing training with Duccio Rocchini
 
 <img src="Pictures/remote_sensing_training_logo.png" />
 
-## Langugaes used during the training 📚
+## Languages used during the training 📚
 The following langugaes will be used:
 + Markdown
 + R
