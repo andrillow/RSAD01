@@ -28,4 +28,10 @@ plot(b2, col=cl)
 cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (3)
 plot(b2, col=cl)
 
-setwd(C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/)
+# set the working directory
+setwd(C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/)
+pdf("b2.pdf")
+png(b2.png")
+
+
+
