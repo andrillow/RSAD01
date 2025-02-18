@@ -49,5 +49,15 @@ cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4
 plot(b2, col=cl)
 dev.off()
 
+png("b2_multi3.png")
+par(mfrow=c(2,2))
+cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
+plot(b2, col=cl)
+cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "darkgoldenrod1")) (100)
+plot(b2, col=cl)
+cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4", "aquamarine3")) (100)
+plot(b2, col=cl)
+dev.off()
+
 
 
