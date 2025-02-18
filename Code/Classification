@@ -8,3 +8,16 @@ arctic <- rast("ellesmere_oli_2014172_lrg.jpg")
 plot(arctic)
 arctic <- flip(arctic) #flip the image if needed
 plot(arctic)
+
+# get band values
+values_arctic <- values(arctic)
+values_arctic
+head(values_arctic)
+
+# calculate k-mean clusters
+k_means_arctic <- kmeans(values_arctic, centers=3)
+k_means_arctic$cluster
+
+# land cover map based on the classification
+arctic_cover <- setValues(arctic[[1]], k_means_arctic$cluster)
+plot(arctic_cover)
