@@ -28,7 +28,7 @@ png("b2.png")
 plot(b2)
 dev.off()
 
-# export as a multi-panel figure
+# export as a multi-panel figure, also as pdf
 png("b2_multi.png")
 par(mfrow=c(1,3))
 cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
@@ -49,7 +49,7 @@ cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4
 plot(b2, col=cl)
 dev.off()
 
-png("b2_multi3.png")
+pdf("b2_multi3.pdf")
 par(mfrow=c(2,2))
 cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
 plot(b2, col=cl)
