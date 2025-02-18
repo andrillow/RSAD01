@@ -23,7 +23,7 @@ The following langugaes will be used:
 Wiht the following code, we can attain the following image:
 
 ``` r
-pdf("b2.pdf")
+png("b2.png")
 plot(b2)
 dev.off()
 ```
