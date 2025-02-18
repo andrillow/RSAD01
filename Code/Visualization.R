@@ -57,7 +57,7 @@ cl <- colorRampPalette(c("darkorchid3", "cyan", "chartreuse", "chocolate", "dark
 plot(b2, col=cl)
 cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4", "aquamarine3")) (100)
 plot(b2, col=cl)
+cl <- colorRampPalette(c("grey97", "grey80", "grey60", "grey30", "black")) (100)
+plot(b2, col=cl)
 dev.off()
-
-
 
