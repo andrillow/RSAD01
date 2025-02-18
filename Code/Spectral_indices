@@ -46,6 +46,15 @@ par(mfrow=c(1,2))
 plot(ndvi_1992, col=mako (100))
 plot(ndvi_2006, col=mako (100))
 
+# compare dvi and ndvi maps
+par(mfrow=c(2,2))
+plot(dvi_1992, col=mako (100))
+plot(dvi_2006, col=mako (100))
+plot(ndvi_1992, col=mako (100))
+plot(ndvi_2006, col=mako (100))
+
+
+
 
 
 
