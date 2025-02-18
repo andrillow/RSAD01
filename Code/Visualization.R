@@ -29,7 +29,7 @@ plot(b2)
 dev.off()
 
 # export as a multi-panel figure, also as pdf
-png("b2_multi.png")
+png("b2_multi.png") # first multi-panel figure
 par(mfrow=c(1,3))
 cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
 plot(b2, col=cl)
@@ -38,8 +38,7 @@ plot(b2, col=cl)
 cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4", "aquamarine3")) (100)
 plot(b2, col=cl)
 dev.off()
-
-png("b2_multi2.png")
+png("b2_multi2.png") # second multi-panel figure
 par(mfrow=c(3,1))
 cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
 plot(b2, col=cl)
@@ -48,8 +47,7 @@ plot(b2, col=cl)
 cl <- colorRampPalette(c("palegreen", "seagreen", "chartreuse", "darkolivegreen4", "aquamarine3")) (100)
 plot(b2, col=cl)
 dev.off()
-
-pdf("b2_multi3.pdf")
+pdf("b2_multi3.pdf") # third multi-panel figure
 par(mfrow=c(2,2))
 cl <- colorRampPalette(c("cyan", "chocolate", "chartreuse")) (100)
 plot(b2, col=cl)
@@ -60,4 +58,21 @@ plot(b2, col=cl)
 cl <- colorRampPalette(c("grey97", "grey80", "grey60", "grey30", "black")) (100)
 plot(b2, col=cl)
 dev.off()
+
+# importing other Sentinel bands from ImageRy
+b3<- im.import("sentinel.dolomites.b3.tif") # green band(550 nm)
+b4<- im.import("sentinel.dolomites.b4.tif") # red band (665 nm)
+b8<- im.import("sentinel.dolomites.b8.tif") # NIR band (842 nm; human vision extends only until a bit past 700 nm)
+
+# generate a stack
+sentinel_stack <- c(b2, b3, b4, b8)
+plot(sentinel_stack)
+
+# check for correlations between bands
+pairs(sentinel_stack)
+
+# print the stack object information
+sentinel_stack
+
+
 
