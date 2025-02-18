@@ -24,8 +24,9 @@ plot(b2, col=cl)
 
 # set the working directory
 setwd("C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/")
-pdf("b2.pdf")
 png("b2.png")
+plot(b2)
+dev.off()
 
 
 
