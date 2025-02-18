@@ -74,5 +74,10 @@ pairs(sentinel_stack)
 # print the stack object information
 sentinel_stack
 
+# plot using a grey scale
+cl <- colorRampPalette(c("grey97", "grey80", "grey60", "grey30", "black")) (100)
+plot(sentinel_stack, col=cl)
 
+# plot using RGB
+im.plotRGB(sentinel_stack, r=3, g=2, b=1, title="Natural color image")
 
