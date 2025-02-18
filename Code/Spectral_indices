@@ -33,4 +33,23 @@ plot(dvi_1992)
 plot(dvi_2006)
 plot(dvi_1992, col=magma(100)) #use alternative colors from the viridis package
 plot(dvi_2006, col=magma(100))
+
+# range of images (depending on the number of bits of the image)
 dev.off()
+plot(mato2006) # range of 0-256 equals to an 8 bit image (2^8=256)
+ncell(mato2006) # count number of pixels
+
+# using the normalized vegetation index (NDVI) to compare images with different resolutions (bits)
+ndvi_1992 <- im.ndvi(mato1992, 1, 2)
+ndvi_2006 <- im.ndvi(mato2006, 1, 2)
+par(mfrow=c(1,2))
+plot(ndvi_1992, col=mako (100))
+plot(ndvi_2006, col=mako (100))
+
+
+
+
+
+
+
+
