@@ -79,5 +79,21 @@ cl <- colorRampPalette(c("grey97", "grey80", "grey60", "grey30", "black")) (100)
 plot(sentinel_stack, col=cl)
 
 # plot using RGB
+par(mfrow=c(1,2))
 im.plotRGB(sentinel_stack, r=3, g=2, b=1, title="Natural color image")
+im.plotRGB(sentinel_stack, r=4, g=3, b=2, title="False color image")
+
+# the image does not change as the bands other then NIR are highly correlated
+par(mfrow=c(2,2))
+im.plotRGB(sentinel_stack, r=4, g=3, b=2, title="False color image 1")
+im.plotRGB(sentinel_stack, r=4, g=1, b=2, title="False color image 2")
+im.plotRGB(sentinel_stack, r=4, g=2, b=1, title="False color image 3")
+im.plotRGB(sentinel_stack, r=4, g=1, b=3, title="False color image 4")
+
+# different band compositions can be used to detect distinct objects
+mato_grosso <- im.import("matogrosso_ast_2006209.lrg.jpg") #band 1= NIR, band 2= red, band 3= green
+im.plotRGB(mato_grosso, r=2, g=1, b=3, title="Mato Grosso false image") #identify bare soil
+im.plotRGB(mato_grosso, r=2, g=2, b=1, title="Mato Grosso false image enhanced") #enhance identification of bare soil
+
+
 
