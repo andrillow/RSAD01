@@ -21,3 +21,7 @@ k_means_arctic$cluster
 # land cover map based on the classification
 arctic_cover <- setValues(arctic[[1]], k_means_arctic$cluster)
 plot(arctic_cover)
+
+# land cover map using a function from imageRy
+arctic_cover2 <- im.classify(arctic, num_clusters=3) #set a seed to avoid variations in the output
+plot(arctic_cover2)
