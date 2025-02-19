@@ -2,6 +2,7 @@
 
 library(terra)
 library(imageRy)
+library(ggplot2)
 
 setwd("C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/")
 arctic <- rast("ellesmere_oli_2014172_lrg.jpg")
@@ -50,5 +51,13 @@ cover <- c("forest", "human-impacted")
 perc1992 <- percentage1992
 perc2006 <- percentage2006
 mato_grosso_df <- data.frame(cover, perc1992, perc2006)
+
+# plot the relative cover by class
+cover_1992_plot <- ggplot(mato_grosso_df, aes(x=cover, y=perc1992, color=cover)) +
+                   geom_bar(stat="identity", fill="white")
+cover_1992_plot
+cover_2006_plot <- ggplot(mato_grosso_df, aes(x=cover, y=perc2006, color=cover)) +
+                   geom_bar(stat="identity", fill="white")
+cover_2006_plot
 
 
