@@ -21,3 +21,7 @@ plot(Variability2)
 im.ggplot(Variability) #same map using ggplot
 Variability3 <- focal(NIR, matrix(1/9,3,3), fun=var) # using variance instead of standard deviation
 plot(Variability3)
+# Standard deviation versus variance
+par(mfrow=c(1,2))
+plot(Variability)
+plot(Variability3)
