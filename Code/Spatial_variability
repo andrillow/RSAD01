@@ -14,14 +14,16 @@ glacier_RGB2 <- im.plotRGB(glacier_image, 3, 2, 1, title="NIR on blue component"
 # Formula: sqrt(sum((x - mean(x))^2) / n)
 # Variance: SD^2
 NIR <- glacier_image [[1]]
-Variability <- focal(NIR, matrix(1/9,3,3), fun=sd)
-plot(Variability)
-Variability1a <- focal(NIR, matrix(1/25,5,5), fun=sd)
+Variability1a <- focal(NIR, matrix(1/9,3,3), fun=sd)
 plot(Variability1a)
+Variability1b <- focal(NIR, matrix(1/25,5,5), fun=sd)
+plot(Variability1b)
+Variability1c <- focal(NIR, matrix(1/49,7,7), fun=sd)
+plot(Variability1c)
 im.ggplot(Variability) #same map using ggplot
 Variability2 <- focal(NIR, matrix(1/9,3,3), fun=var) # using variance instead of standard deviation
 plot(Variability2)
 # Standard deviation versus variance
 par(mfrow=c(1,2))
-plot(Variability)
+plot(Variability1a)
 plot(Variability2)
