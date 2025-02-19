@@ -9,3 +9,15 @@ glacier_image <- c(glacier_image [[1]], glacier_image [[2]], glacier_image [[3]]
 glacier_RGB <- im.plotRGB(glacier_image, 1, 2, 3, title="NIR on red component")
 glacier_RGB2 <- im.plotRGB(glacier_image, 3, 1, 2, title="NIR on green component")
 glacier_RGB2 <- im.plotRGB(glacier_image, 3, 2, 1, title="NIR on blue component")
+
+# Calculate standard deviation
+# Formula: sqrt(sum((x - mean(x))^2) / n)
+# Variance: SD^2
+NIR <- glacier_image [[1]]
+Variability <- focal(NIR, matrix(1/9,3,3), fun=sd)
+plot(Variability)
+Variability2 <- focal(NIR, matrix(1/25,5,5), fun=sd)
+plot(Variability2)
+im.ggplot(Variability) #same map using ggplot
+Variability3 <- focal(NIR, matrix(1/9,3,3), fun=var) # using variance instead of standard deviation
+plot(Variability3)
