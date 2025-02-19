@@ -32,8 +32,8 @@ dev.off()
 
 # Shannon index: abundance-based method
 Shannon_diversity <- Shannon(NIR, window=3, na.tolerance=0) # avoid with continuous, high-resolution data; 0 NA tolerance removes the edge effect
-plot(Shannon_diversity)
-Shannon_diversity_ggplot <- im.ggplot(Shannon_diversity)
+plot(Shannon_diversity)im.ggplot(Shannon_diversity)
+Shannon_diversity_ggplot <- 
 plot(Shannon_diversity_ggplot)
 
 # Cropping the image
@@ -44,3 +44,14 @@ cropped_NIR_ggplot <- im.ggplot(cropped_NIR)
 NIR_ggplot <- im.ggplot(NIR)
 NIR_ggplot + cropped_NIR_ggplot
 
+# Aggreagating pixels to move to a lower resolution
+aggregated_NIR <- aggregate(NIR, fact=5)
+plot(aggregated_NIR)
+aggregated_NIR_ggplot <- im.ggplot(aggregated_NIR)
+NIR_ggplot + aggregated_NIR_ggplot
+
+# Re-calcualtion the Shannon index with a lower resolution image
+Shannon_diversity_low <- Shannon(aggregated_NIR, window=3, na.tolerance=0)
+plot(Shannon_diversity_low)
+Shannon_diversity_low_ggplot <- im.ggplot(Shannon_diversity_low)
+Shannon_diversity_ggplot + Shannon_diversity_low_ggplot
