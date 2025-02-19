@@ -42,4 +42,4 @@ Composite_plot
 
 The resulting image would look like this:
 
-<img src="Pictures/Composite_plot.jpg" width="60%" />
+<img src="Pictures/Composite_plot.png" width="60%" />
