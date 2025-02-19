@@ -31,12 +31,16 @@ plot(Variability2)
 dev.off()
 
 # Shannon index: abundance-based method
-Shannon_diversity <- Shannon(NIR, window=3)
+Shannon_diversity <- Shannon(NIR, window=3, na.tolerance=0) # avoid with continuous, high-resolution data; 0 NA tolerance removes the edge effect
 plot(Shannon_diversity)
 Shannon_diversity_ggplot <- im.ggplot(Shannon_diversity)
+plot(Shannon_diversity_ggplot)
 
 # Cropping the image
 extent <- c(0, 100, 0, 100)
 cropped_NIR <- crop(NIR, extent)
 plot(cropped_NIR)
+cropped_NIR_ggplot <- im.ggplot(cropped_NIR)
+NIR_ggplot <- im.ggplot(NIR)
+NIR_ggplot + cropped_NIR_ggplot
 
