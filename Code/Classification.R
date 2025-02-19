@@ -3,6 +3,7 @@
 library(terra)
 library(imageRy)
 library(ggplot2)
+library(patchwork) #package needed to combine plots
 
 setwd("C:/Users/andreanocentini/OneDrive - Seminole Tribe Of Florida/Desktop/RSAD01/")
 arctic <- rast("ellesmere_oli_2014172_lrg.jpg")
@@ -59,5 +60,5 @@ cover_1992_plot
 cover_2006_plot <- ggplot(mato_grosso_df, aes(x=cover, y=perc2006, color=cover)) +
                    geom_bar(stat="identity", fill="white")
 cover_2006_plot
-
+cover_1992_plot + cover_2006_plot
 
