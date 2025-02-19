@@ -1,1 +1,11 @@
+# Code to measure spatial variability considering both (i) spectral indices and (ii) relative abudances
 
+library(terra)
+library(imageRy)
+
+im.list()
+glacier_image <- im.import("sentinel.png")
+glacier_image <- c(glacier_image [[1]], glacier_image [[2]], glacier_image [[3]])
+glacier_RGB <- im.plotRGB(glacier_image, 1, 2, 3, title="NIR on red component")
+glacier_RGB2 <- im.plotRGB(glacier_image, 3, 1, 2, title="NIR on green component")
+glacier_RGB2 <- im.plotRGB(glacier_image, 3, 2, 1, title="NIR on blue component")
