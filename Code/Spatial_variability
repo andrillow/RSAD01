@@ -2,6 +2,7 @@
 
 library(terra)
 library(imageRy)
+library(rasterdiv)
 
 im.list()
 glacier_image <- im.import("sentinel.png")
@@ -27,3 +28,15 @@ plot(Variability2)
 par(mfrow=c(1,2))
 plot(Variability1a)
 plot(Variability2)
+dev.off()
+
+# Shannon index: abundance-based method
+Shannon_diversity <- Shannon(NIR, window=3)
+plot(Shannon_diversity)
+Shannon_diversity_ggplot <- im.ggplot(Shannon_diversity)
+
+# Cropping the image
+extent <- c(0, 100, 0, 100)
+cropped_NIR <- crop(NIR, extent)
+plot(cropped_NIR)
+
