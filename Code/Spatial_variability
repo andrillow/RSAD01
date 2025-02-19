@@ -50,8 +50,15 @@ plot(aggregated_NIR)
 aggregated_NIR_ggplot <- im.ggplot(aggregated_NIR)
 NIR_ggplot + aggregated_NIR_ggplot
 
-# Re-calcualtion the Shannon index with a lower resolution image
+# Re-calculation the Shannon index with a lower resolution image
 Shannon_diversity_low <- Shannon(aggregated_NIR, window=3, na.tolerance=0)
 plot(Shannon_diversity_low)
 Shannon_diversity_low_ggplot <- im.ggplot(Shannon_diversity_low)
 Shannon_diversity_ggplot + Shannon_diversity_low_ggplot
+
+# Shannon is a point descriptor, hence better use the Renyi function, which tests for multiple indeces
+Renyi_indices <- Renyi(aggregated_NIR, window=3, alpha=seq(0,12,4), na.tolerance=0.2)
+
+# Rao's Q uses both distance statistics as SD together with abundance data
+
+
