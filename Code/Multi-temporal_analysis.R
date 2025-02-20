@@ -2,8 +2,7 @@
 
 library(terra)
 library(imageRy)
-library(ggplot2)
-library(patchwork)
+library(viridis)
 
 im.list()
 EN01 <- im.import("EN_01.png")
@@ -17,3 +16,8 @@ EN01RGB / EN13RGB
 # map temporal change by using the difference operator
 EN_difference <- EN13 [[1]] - EN01 [[1]]
 plot(EN_difference)
+
+# Greenland ice melt data
+Greenland <- im.import("greenland")
+Greenland_difference <- Greenland[[1]] - Greenland [[4]]
+plot(Greenland_difference, col=mako(100))
