@@ -14,7 +14,7 @@ map_1992<- im.ggplot(mato1992[[1]])
 map_2006 <- im.ggplot(mato2006[[1]])
 map_1992 + map_2006 # plot the two maps together using the patchwork package
 
-# ggplot2 for RGB space: the ggRGB function
+# ggRGB function to plot RGB layers instead of single bands
 RGB_plot_1992a <- ggRGB(mato1992, r=1, g=2, b=3)
 RGB_plot_2006a <- ggRGB(mato2006, r=1, g=2, b=3)
 RGB_plot_1992b <- ggRGB(mato1992, r=2, g=3, b=1)
