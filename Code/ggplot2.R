@@ -23,5 +23,12 @@ RGB_plot_1992c <- ggRGB(mato1992, r=2, g=1, b=3)
 RGB_plot_2006c <- ggRGB(mato2006, r=2, g=1, b=3)
 (RGB_plot_1992a + RGB_plot_2006a) / (RGB_plot_1992b + RGB_plot_2006b) / (RGB_plot_1992c + RGB_plot_2006c)
 
-# Stretching to enhance colors
+# Stretching to enhance colors and highlight differences
 mato2006_stretch <- ggRGB(mato2006, r=1, g=2, b=3, stretch="lin")
+mato2006_hist <- ggRGB(mato2006, r=1, g=2, b=3, stretch="hist")
+mato2006_sqrt <- ggRGB(mato2006, r=1, g=2, b=3, stretch="sqrt") # ideal for very dark images to brightening
+mato2006_log <- ggRGB(mato2006, r=1, g=2, b=3, stretch="log") # ideal for very dark images to brightening
+plot(mato2006_stretch)
+plot(mato2006_hist)
+plot(mato2006_sqrt)
+plot(mato2006_log)
