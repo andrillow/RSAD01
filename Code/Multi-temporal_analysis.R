@@ -13,3 +13,7 @@ EN13 <- flip(EN13)
 EN01RGB <- ggRGB(EN01, 1, 2, 3)
 EN13RGB <- ggRGB(EN13, 1, 2, 3)
 EN01RGB / EN13RGB
+
+# map temporal change by using the difference operator
+EN_difference <- EN13 [[1]] - EN01 [[1]]
+plot(EN_difference)
