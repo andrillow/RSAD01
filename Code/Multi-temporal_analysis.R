@@ -3,6 +3,7 @@
 library(terra)
 library(imageRy)
 library(viridis)
+library(colorist)
 
 im.list()
 EN01 <- im.import("EN_01.png")
@@ -21,3 +22,17 @@ plot(EN_difference)
 Greenland <- im.import("greenland")
 Greenland_difference <- Greenland[[1]] - Greenland [[4]]
 plot(Greenland_difference, col=mako(100))
+
+Greenland_RGB <- im.plotRGB(Greenland, 1, 2, 4)
+
+# colorist package to overlap color maps
+data("fiespa_occ")
+Fiespa_metrics <- metrics_pull(fiespa_occ)
+Fiespa_palette <- palette_timecycle(fiespa_occ)
+
+
+
+
+
+
+
